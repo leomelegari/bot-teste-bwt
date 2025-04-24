@@ -12,7 +12,6 @@ if (!TOKEN || !CHAT_ID) {
 }
 
 const bot = new TelegramBot(TOKEN, { polling: false });
-console.log("bot ", bot);
 console.log("📦 Bot de rastreio rodando...");
 
 const HISTORY_FILE = "rastreamento_status.json";
@@ -21,13 +20,8 @@ const rastreioInfo = [
   {
     cpf: "44178732838",
     empresa: "BWT",
-    notaFiscal: "2866627",
-  },
-  {
-    cpf: "44178732838",
-    empresa: "BWT",
-    notaFiscal: "93988",
-  },
+    notaFiscal: "276848",
+  }
 ];
 
 type StatusHistory = {
@@ -97,7 +91,7 @@ async function buscarRastreio() {
 
       if (statusAtual !== ultimoStatus) {
         const mensagem = `📦 *Atualização de entrega:
-        *\n\n
+        *\n
         ${remetente}
         \n
         ${data} - ${hora}

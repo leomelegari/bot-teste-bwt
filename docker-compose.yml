@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  bot:
+    build: .
+    container_name: bot-rastreamento
+    env_file:
+      - .env
+    volumes:
+      - ./rastreamento_status.json:/app/rastreamento_status.json
+    restart: unless-stopped
