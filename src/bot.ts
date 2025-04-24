@@ -21,7 +21,7 @@ const rastreioInfo = [
     cpf: "44178732838",
     empresa: "BWT",
     notaFiscal: "276848",
-  }
+  },
 ];
 
 type StatusHistory = {
@@ -90,20 +90,15 @@ async function buscarRastreio() {
       const data = response.data?.ocorrenciaMaisRecente.ocorrencia.data;
 
       if (statusAtual !== ultimoStatus) {
-        const mensagem = `📦 *Atualização de entrega:
-        *\n
-        ${remetente}
+        const mensagem = `📦 *Atualização de entrega*:
         \n
-        ${data} - ${hora}
-        \n
-        ${titulo}
-        \n
-        ${descricao}
-        \n
-        ${statusAtual}
+        *Remetente*: ${remetente}
+        *Data e hora*: ${data} - ${hora}
+        *Título Rastreio*: ${titulo}
+        *Descrição*: ${descricao}
+        *Status Atual*: ${statusAtual}
         `;
         await bot.sendMessage(CHAT_ID, mensagem, { parse_mode: "Markdown" });
-        // await salvarStatusAtual(statusAtual);
 
         historico[chave] = statusAtual;
         console.log("🔔 Status atualizado e enviado.");
