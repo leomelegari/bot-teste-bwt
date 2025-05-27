@@ -18,9 +18,9 @@ const HISTORY_FILE = "rastreamento_status.json";
 
 const rastreioInfo = [
   {
-    cpf: "44178732838",
+    cpf: "48461880862",
     empresa: "BWT",
-    notaFiscal: "276848",
+    notaFiscal: "101444",
   },
 ];
 
